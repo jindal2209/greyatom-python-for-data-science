@@ -1,7 +1,7 @@
 # --------------
 #Code starts here
 
-#Function to check for palindrome
+# 1. Function to check for palindrome
 def palindrome_check(num):
   num=str(num)
   return (num[::-1]==num)
@@ -17,7 +17,7 @@ def palindrome(num):
 #Code ends here  
 
 
-# --------------
+# 2. Anagram Scramble
 def a_scramble(str_1,str_2):
     str_1 = list(str_1.lower())
     str_2 = list(str_2.lower())
@@ -35,8 +35,9 @@ def a_scramble(str_1,str_2):
 print(a_scramble("baby shower","shows"))
 
 
-# --------------
-#Code starts here
+# 3. Fibonacci check
+
+## my code
 def fibonacci(n):
     if n == 0:
         return 0
@@ -56,12 +57,24 @@ def check_fib(num):
             return False
         else :
             return True
+  
+## grey atom code
+from math import sqrt
+def is_perfect_square(x):    ## to check perfect squarre
+    s = sqrt(x)
+    return (int(s)*int(s) == x) 
+def check_fib(num):      ## to check fibonacci number
+    if is_perfect_square((5*num*num) + 4) or is_perfect_square((5*num*num) - 4): #Formula for checking fibonacci number
+        return True
+    return False
     
+
+
     
 
+# 4. String compression
 
-
-# --------------
+## my code
 def compress(word):
     word = list(word.lower())
     word.append(" ")
@@ -84,7 +97,27 @@ def compress(word):
     return "".join(wl)
 
 
-# --------------
+## grey atom code
+def compress(word):
+    word=word.lower()
+    mist=[]
+    l=0
+    while(l<len(word)):
+        m=word[l]
+        j=0
+        while(l<len(word) and word[l]==m):
+                 j=j+1
+                 l=l+1    
+
+        mist.append(m)
+        mist.append(str(j))
+    
+    return ''.join(mist)
+  
+
+
+  
+# 5. K-Distinct
 def k_distinct(string,k):
     return len(set(string.lower())) == k
 
